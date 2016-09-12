@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rute">
+        <item>Tidak ada pilihan</item>
+        <item>Jakarta - Surabaya</item>
+        <item>Surabaya - Malang</item>
+        <item>Bali - Makasar</item>
+    </string-array>
+
+</resources>

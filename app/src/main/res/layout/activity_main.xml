@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="700dp">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent">
+
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="700dp"
+    android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -22,9 +23,10 @@
         android:layout_alignParentTop="true"
         android:fontFamily="@string/abc_action_bar_home_description"
         android:text="Booking Tiket Pesawat"
-        android:textColor="#4c64cd"
-        android:textSize="@dimen/abc_text_size_display_1_material"
-        android:textStyle="bold|italic" />
+        android:textColor="#0772ec"
+        android:textSize="30dp"
+        android:textStyle="bold|italic"
+        android:focusableInTouchMode="false" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -44,7 +46,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/imageView"
         android:layout_below="@+id/imageView"
-        android:text="Nama Pemesan" />
+        android:hint="Nama Pemesan" />
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -57,10 +59,10 @@
         android:layout_below="@+id/editTextNama"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="Email" />
+        android:hint="Email" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radioGroupPswt"
         android:layout_width="wrap_content"
         android:layout_height="110dp"
         android:layout_alignParentEnd="true"
@@ -73,7 +75,8 @@
             android:id="@+id/textViewPswt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pilih Pesawat" />
+            android:text="Pilih Pesawat"
+            android:textColor="#0772ec" />
 
         <RadioButton
             android:id="@+id/radioButtonGI"
@@ -98,94 +101,170 @@
     </RadioGroup>
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerRute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView2" />
-
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/spinner" />
+        android:entries="@array/rute"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Rute Perjalanan"
+        android:layout_below="@+id/radioGroupPswt"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/radioGroup"
-        android:text="Asal" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/spinner"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="Tujuan" />
+        android:layout_marginTop="22dp"
+        android:textColor="#0772ec" />
 
     <CheckBox
-        android:id="@+id/checkBoxDewasa"
+        android:id="@+id/checkBoxRingan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner2"
-        android:layout_toEndOf="@+id/textView2"
+        android:checked="false"
+        android:text="0-15"
+        android:layout_alignTop="@+id/checkBoxMedium"
         android:layout_toRightOf="@+id/textView2"
-        android:checked="false"
-        android:text="Dewasa" />
+        android:layout_toEndOf="@+id/textView2" />
 
     <CheckBox
-        android:id="@+id/checkBoxAnak"
+        android:id="@+id/checkBoxMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/spinner2"
-        android:layout_alignRight="@+id/spinner2"
-        android:layout_below="@+id/spinner2"
-        android:layout_marginEnd="38dp"
-        android:layout_marginRight="38dp"
         android:checked="false"
-        android:text="Anak-Anak" />
+        android:text="16-30"
+        android:layout_below="@+id/spinnerRute"
+        android:layout_toLeftOf="@+id/checkBoxBerat"
+        android:layout_toStartOf="@+id/checkBoxBerat"
+        android:layout_marginRight="23dp"
+        android:layout_marginEnd="23dp" />
 
     <EditText
         android:id="@+id/editTextPD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/checkBoxDewasa"
         android:ems="10"
         android:inputType="numberSigned"
-        android:text="Jumlah Penumpang Dewasa" />
+        android:hint="Jumlah Penumpang Dewasa"
+        android:layout_below="@+id/checkBoxRingan"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/editTextPA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editTextPD"
         android:ems="10"
         android:inputType="numberSigned"
-        android:text="Jumlah Penumpang Anak-anak" />
+        android:hint="Jumlah Penumpang Anak-anak"
+        android:layout_below="@+id/editTextPD"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/editTextPD"
+        android:layout_alignEnd="@+id/editTextPD" />
 
     <Button
         android:id="@+id/buttonPesan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Pesan" />
+        android:text="Pesan"
+        android:background="@drawable/percantik"
+        android:layout_below="@+id/editTextPA"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textViewhasil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@string/abc_action_bar_home_description"
+        tools:text="Terima Kasih Pemesanan Berhasil"
+        android:textColor="#4c64cd"
+        android:textSize="@dimen/abc_dialog_padding_top_material"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/buttonPesan"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewNama"
+        android:layout_below="@+id/textViewhasil"
+        android:layout_alignLeft="@+id/textViewhasil"
+        android:layout_alignStart="@+id/textViewhasil" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewPesawat"
+        android:layout_below="@+id/textViewEmail"
+        android:layout_alignLeft="@+id/textViewRute"
+        android:layout_alignStart="@+id/textViewRute" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewRute"
+        android:layout_below="@+id/textViewPesawat"
+        android:layout_alignLeft="@+id/textViewEmail"
+        android:layout_alignStart="@+id/textViewEmail" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewEmail"
+        android:layout_below="@+id/textViewNama"
+        android:layout_alignLeft="@+id/textViewhasil"
+        android:layout_alignStart="@+id/textViewhasil" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewJmlDewasa"
+        android:layout_below="@+id/textViewJenisPnp"
+        android:layout_alignLeft="@+id/textViewRute"
+        android:layout_alignStart="@+id/textViewRute" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewJmlAnak"
+        android:layout_below="@+id/textViewJmlDewasa"
+        android:layout_alignLeft="@+id/textViewJenisPnp"
+        android:layout_alignStart="@+id/textViewJenisPnp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewJenisPnp"
+        android:layout_below="@+id/textViewRute"
+        android:layout_alignLeft="@+id/textViewJmlDewasa"
+        android:layout_alignStart="@+id/textViewJmlDewasa" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="31-50"
+        android:id="@+id/checkBoxBerat"
+        android:checked="false"
+        android:layout_above="@+id/editTextPD"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bagasi :"
+        android:id="@+id/textView3"
+        android:textColor="#0772ec"
+        android:layout_below="@+id/spinnerRute"
+        android:layout_toRightOf="@+id/textViewNama"
+        android:layout_toEndOf="@+id/textViewNama" />
 
 </RelativeLayout>
 </ScrollView>
